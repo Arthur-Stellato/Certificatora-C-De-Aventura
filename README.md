@@ -20,13 +20,13 @@ Curso-base: **Introdução à Programação** (Bloco 1)
 
 | Tecnologia | Finalidade |
 |---|---|
-| **C (GCC)** | Linguagem principal do projeto — todo o RPG é implementado em C puro, compilado com `gcc -Wall` |
+| **C (GCC)** | Linguagem principal do projeto — todo o RPG é implementado em C, compilado com `gcc -Wall` |
 | **Git & GitHub** | Controle de versão e hospedagem do repositório aberto (código, histórico de commits) |
 | **GitHub Pages** | Hospedagem desta página e do texto teórico de cada módulo |
 | **Markdown** | Formatação do conteúdo textual do REA |
 | **Google Meet** | Gravação das videoaulas, aproveitando a legenda automática nativa para acessibilidade |
 
-Nenhuma biblioteca externa é utilizada — o projeto usa apenas a biblioteca padrão do C (`stdio.h`), garantindo que qualquer pessoa com um compilador C consiga rodar o código sem dependências.
+O projeto é desenvolvido majoritariamente com a biblioteca padrão do C (`stdio.h`). Outras bibliotecas padrão (como `string.h` ou `stdlib.h`) poderão ser incorporadas conforme a necessidade de módulos específicos, sempre priorizando simplicidade e poucas dependências, para que qualquer pessoa com um compilador C consiga rodar o código sem complicações.
 
 ---
 
