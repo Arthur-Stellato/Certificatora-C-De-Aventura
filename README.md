@@ -22,6 +22,7 @@ Curso-base: **Introdução à Programação** (Bloco 1)
 |---|---|
 | **C (GCC)** | Linguagem principal do projeto — todo o RPG é implementado em C, compilado com `gcc -Wall` |
 | **Git & GitHub** | Controle de versão e hospedagem do repositório aberto (código, histórico de commits) |
+| **Kanban Via GitHub** | https://github.com/users/Arthur-Stellato/projects/3 |
 | **GitHub Pages** | Hospedagem desta página e do texto teórico de cada módulo |
 | **Markdown** | Formatação do conteúdo textual do REA |
 | **Google Meet** | Gravação das videoaulas, aproveitando a legenda automática nativa para acessibilidade |
