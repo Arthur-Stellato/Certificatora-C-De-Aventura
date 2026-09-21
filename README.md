@@ -92,10 +92,10 @@ Reuniões semanais, planejamento, estudo da ementa, codificação dos 7 módulos
 
 | Responsável | Frente |
 |---|---|
-| Arthur | A Definir |
-| Conrado | A Definir |
-| João | A Definir |
-| Reinan | A Definir |
+| Arthur | Gravação das 7 videoaulas, revisão e edição de legendas e testes de qualidade dos vídeos |
+| Conrado | Criação e estilização do site (GitHub Pages), testes de acessibilidade e ajustes de responsividade |
+| João | Estruturação e organização do repositório GitHub, documentação técnica e controle de versão |
+| Reinan | Design do RPG, redação do texto teórico dos 7 módulos e roteiro dos vídeos |
 
 ---
 
