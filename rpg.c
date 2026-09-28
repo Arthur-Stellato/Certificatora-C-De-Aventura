@@ -1,36 +1,37 @@
 #include <stdio.h>
  
-int main(void) {
+int main() {
  
     /* ---------- MÓDULO 1 ---------- */
- 
+
     char nome[50];
     int vida;
     int forca;
     int mana;
- 
-    const int VIDA_INICIAL = 100;
- 
-    printf("=== CRIACAO DO PERSONAGEM ===\n");
-    printf("Digite o nome do seu heroi: ");
-    scanf("%49s", nome);
- 
-    printf("Distribua 20 pontos entre forca e mana.\n");
-    printf("Pontos de FORCA: ");
+
+    const int VIDA_MAX = 100;
+
+    vida = VIDA_MAX;
+
+    printf("Digite o nome do personagem:");
+    scanf("%49s", &nome);
+
+    printf("Digite a força do personagem:");
     scanf("%d", &forca);
-    printf("Pontos de MANA: ");
+
+    printf("Digite a mana do personagem");
     scanf("%d", &mana);
- 
-    vida = VIDA_INICIAL;
- 
+
+    float multiplicadorDano = 1.5;
+
     printf("\n--- Ficha do Heroi ---\n");
     printf("Nome:  %s\n", nome);
     printf("Vida:  %d\n", vida);
     printf("Forca: %d\n", forca);
     printf("Mana:  %d\n", mana);
- 
-    int poderTotal = forca + mana; /* soma ja vista no Modulo 1 */
-    printf("Poder total do heroi: %d\n", poderTotal);
- 
- return 0;
+    printf("Multiplicador de dano critico: %.2f\n", multiplicadorDano);
+
+    int poderTotal = forca + mana;
+
+    return 0;
 }
