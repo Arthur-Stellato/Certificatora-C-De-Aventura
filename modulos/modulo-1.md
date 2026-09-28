@@ -46,3 +46,4 @@ Vá digitando linha por linha, explicando cada operador:
 **[5:40–6:00] Gancho**
 > "Mas e se aparecer um inimigo? Como a gente compara quem é mais forte? Isso é assunto do próximo módulo."
 
+
