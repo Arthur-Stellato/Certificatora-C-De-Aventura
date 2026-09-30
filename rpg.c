@@ -33,5 +33,25 @@ int main() {
 
     int poderTotal = forca + mana;
 
+    /* ------------ MÓDULO 2 ------------ */
+
+    int forcaInimigo = 12;
+    int manaInimigo = 8;
+    int poderInimigo = forcaInimigo + manaInimigo;
+
+    int diferencaPoder = poderTotal - poderInimigo;
+    printf("Diferença de poder: %d\n", diferencaPoder);
+
+    if(poderTotal > poderInimigo){
+        printf("O Herói é mais forte que o inimigo!");
+    } else if (poderTotal < poderInimigo){
+        printf("O Inimigo é mais forte que o Herói");
+    } else if (poderTotal == poderInimigo){
+        printf("Poder Total entre ambos é o mesmo");
+    }
+    
+    
+
+
     return 0;
 }
