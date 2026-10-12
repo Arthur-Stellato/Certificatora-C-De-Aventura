@@ -1,5 +1,15 @@
 #include <stdio.h>
 
+int calcularDano(int poder){
+    return poder / 2;
+}
+
+int atacar(char nomeAtacante[], int dano, int vidaAlvo){
+    int novaVida = vidaAlvo - dano;
+    printf("%s ataca! O alvo perde %d de vida. Vida restante do alvo: %d\n", nomeAtacante, dano, novaVida);
+    return novaVida;
+}
+
 int main()
 {
 
@@ -103,20 +113,17 @@ int main()
     printf("Vida do herói: %d | Vida do inimigo: %d\n", vida, vidaInimigo);
 
     while(vida > 0 && vidaInimigo > 0 && turno <= LIMITE_TURNOS){
-        int danoHeroi = poderTotal / 2;
-        vidaInimigo = vidaInimigo - danoHeroi;
 
-        printf("%s ataca! Inimigo perde %d de vida. Vida do inimigo: %d\n", nome, danoHeroi, vidaInimigo);
+        int danoHeroi = calcularDano(poderTotal);
+        vidaInimigo = atacar(nome, danoHeroi, vidaInimigo);
 
         if(vidaInimigo <= 0){
             printf("O inimigo foi derrotado!\n");
             break;
         }
 
-        int danoInimigo = poderInimigo / 2;
-        vida = vida - danoInimigo;
-
-        printf("Inimigo ataca! Herói perde %d de vida. Vida do herói: %d\n", danoInimigo, vida);
+        int danoInimigo = calcularDano(poderInimigo);
+        vida = atacar("Inimigo", danoInimigo, vida);
 
         if(vida <= 0){
             printf("O herói foi derrotado!\n");
