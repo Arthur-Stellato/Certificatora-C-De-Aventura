@@ -56,6 +56,9 @@ int main()
         printf("Poder Total entre ambos é o mesmo");
     }
 
+
+    /* ------------ MÓDULO 3 ------------ */
+    /*
     int escolha;
 
     printf("\n=== A BIFURCAÇÃO DA MASMORRA ===\n");
@@ -74,12 +77,58 @@ int main()
         }
         
     } else if(escolha == 2){
-        printf("Você segue em segurança e encotnra um pequeno tesouro.\n");
+        printf("Você segue em segurança e encontra um pequeno tesouro.\n");
     } else {
         printf("Caminho inválido! Você fica parado, hesitante");
     }
     
     printf("\nVida atual do héroi: %d\n" ,vida);
+    */
+
+
+    /* ------------ MÓDULO 4 ------------ */
+
+    printf("Preparando para a batalha final\n");
+    
+    for(int contagem = 3; contagem >= 1; contagem--){
+        printf("Contagem regressiva: %d\n", contagem);
+    }
+
+    int vidaInimigo = 50;
+
+    int turno = 1;
+
+    const int LIMITE_TURNOS = 10;
+
+    printf("Vida do herói: %d | Vida do inimigo: %d\n", vida, vidaInimigo);
+
+    while(vida > 0 && vidaInimigo > 0 && turno <= LIMITE_TURNOS){
+        int danoHeroi = poderTotal / 2;
+        vidaInimigo = vidaInimigo - danoHeroi;
+
+        printf("%s ataca! Inimigo perde %d de vida. Vida do inimigo: %d\n", nome, danoHeroi, vidaInimigo);
+
+        if(vidaInimigo <= 0){
+            printf("O inimigo foi derrotado!\n");
+            break;
+        }
+
+        int danoInimigo = poderInimigo / 2;
+        vida = vida - danoInimigo;
+
+        printf("Inimigo ataca! Herói perde %d de vida. Vida do herói: %d\n", danoInimigo, vida);
+
+        if(vida <= 0){
+            printf("O herói foi derrotado!\n");
+            break;
+        }
+
+        turno = turno + 1;
+
+    }
+
+    printf("Total de turnos: %d\n", turno);
+    printf("Vida final do herói: %d | Vida final do inimigo: %d\n", vida, vidaInimigo);
 
     return 0;
 }
