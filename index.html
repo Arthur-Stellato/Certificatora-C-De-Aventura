@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>C de Aventura</title>
+  <meta name="description" content="Sete aulas em vídeo, cada uma em um local do mapa, com tema de RPG.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="nav" aria-label="Navegação principal">
+    <div class="wrap">
+      <a class="brand" href="#inicio">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 4 56 14v18c0 14-10 24-24 28C18 56 8 46 8 32V14z" fill="#8a2a22" stroke="#c58f1e"
+            stroke-width="3" />
+          <path d="M32 14v34M20 26h24" stroke="#f1dfb5" stroke-width="4" stroke-linecap="round" />
+        </svg>
+        C de Aventura
+      </a>
+      <div class="menu">
+        <a href="#objetivos">Objetivos</a>
+        <a href="#identidade">Identidade</a>
+        <a href="#aulas">Aulas</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#time">Time</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn small ghost" id="themeBtn" type="button">Alternar tema</button>
+        <button class="btn small" id="adminBtn" type="button" hidden>Mestre da guilda</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="inicio">
+    <div class="hero-text">
+      <p class="eyebrow">Bem-vindo, aventureiro</p>
+      <h1>C de Aventura</h1>
+      <p class="lead">Sete aulas em vídeo, cada uma guardada em um local do mapa. Escolha seu caminho e comece a
+        jornada.</p>
+      <div class="hero-actions">
+        <a class="btn big" href="#objetivos">Começar</a>
+        <a class="btn big ghost" href="#aulas">Ver aulas</a>
+      </div>
+    </div>
+    <svg class="hero-art" viewBox="0 0 1200 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <circle cx="940" cy="70" r="38" fill="#f1dfb5" opacity=".9" />
+      <path d="M0 260V150l120-70 110 60 130-90 150 100 120-60 150 90 130-80 140 80 150-70v250z" fill="#2a1a3a" />
+      <path d="M0 260V190l140-50 160 40 200-70 180 70 170-40 190 50 160-30v200z" fill="#1c1226" />
+      <g fill="#0e0a07">
+        <rect x="560" y="120" width="80" height="90" />
+        <rect x="540" y="100" width="24" height="110" />
+        <rect x="636" y="100" width="24" height="110" />
+        <path d="M536 100l16-28 16 28zM632 100l16-28 16 28z" />
+        <rect x="590" y="90" width="20" height="40" />
+        <path d="M586 90l14-26 14 26z" />
+      </g>
+      <g fill="#f0c262">
+        <rect x="548" y="122" width="6" height="10" />
+        <rect x="644" y="122" width="6" height="10" />
+        <rect x="596" y="102" width="8" height="12" />
+      </g>
+      <path d="M0 260V215l180-25 220 25 240-30 260 28 300-24v66z" fill="#0e0a07" />
+    </svg>
+  </header>
+
+  <main>
+
+    <!-- Objetivos -->
+    <section class="band" id="objetivos" aria-labelledby="obTitle">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="obTitle">Objetivos</h2>
+          <p>Ensinar algoritmos em C por meio de uma experiência inspirada em RPGs, transformando o aprendizado em uma
+            jornada de desafios e descobertas. O objetivo é desenvolver o raciocínio lógico e a compreensão dos
+            fundamentos da programação, permitindo que os alunos avancem por missões, resolvam problemas e aprimorem
+            suas habilidades a cada etapa. Assim, aprender a programar se torna uma aventura prática, interativa e
+            envolvente.</p>
+        </div>
+        <div class="cards-3">
+          <article class="dialog">
+            <h3>Reunir as aulas</h3>
+            <p>Centralizar as videoaulas do YouTube em um único lugar, sem precisar procurar.</p>
+            <ul class="goals">
+              <li>Sete aulas publicadas no YouTube</li>
+              <li>Assistir sem sair do site</li>
+              <li>Descrição de cada aula</li>
+              <li>Link direto para o YouTube</li>
+            </ul>
+          </article>
+          <article class="dialog">
+            <h3>Organizar o aprendizado</h3>
+            <p>Dividir o conteúdo em aulas curtas para estudar no seu ritmo.</p>
+            <ul class="goals">
+              <li>Uma aula em cada local do mapa</li>
+              <li>Aulas numeradas de 1 a 7</li>
+              <li>Funciona no celular e no computador</li>
+              <li>Conteúdo atualizado pelo Mestre</li>
+            </ul>
+          </article>
+          <article class="dialog">
+            <h3>Tornar o estudo divertido</h3>
+            <p>Transformar a jornada de estudos em uma aventura de RPG.</p>
+            <ul class="goals">
+              <li>Mapa de aulas para explorar</li>
+              <li>Visual de fantasia medieval</li>
+              <li>Modo claro e modo escuro</li>
+              <li>Experiência leve e acolhedora</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Identidade visual -->
+    <section class="band alt" id="identidade" aria-labelledby="idTitle">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="idTitle">Identidade visual</h2>
+          <p>O site imita um jogo de RPG de fantasia medieval: o conteúdo é um mapa de locais, cada aula é um pergaminho
+            e as informações aparecem em caixas de diálogo com bordas douradas.</p>
+        </div>
+        <div class="two-col">
+          <article class="dialog">
+            <h3>Paleta de cores</h3>
+            <ul class="swatches">
+              <li><span class="sw" style="background:#c58f1e"></span><b>Ouro</b><small>#C58F1E · destaques e
+                  bordas</small></li>
+              <li><span class="sw" style="background:#8a2a22"></span><b>Vermelho brasão</b><small>#8A2A22 · alertas e
+                  selos</small></li>
+              <li><span class="sw" style="background:#3a2616"></span><b>Madeira</b><small>#3A2616 · barra de navegação e
+                  rodapé</small></li>
+              <li><span class="sw" style="background:#f4e9cf"></span><b>Pergaminho</b><small>#F4E9CF · fundo das
+                  caixas</small></li>
+              <li><span class="sw" style="background:#2a1d12"></span><b>Tinta</b><small>#2A1D12 · textos</small></li>
+            </ul>
+          </article>
+          <article class="dialog">
+            <h3>Tipografia e elementos</h3>
+            <p class="type-display">MedievalSharp <small>títulos e botões</small></p>
+            <p class="type-body">Crimson Text <small>textos corridos</small></p>
+            <ul class="goals">
+              <li>Caixas de diálogo com cantos em losango</li>
+              <li>Mapa com ícones desenhados em traço</li>
+              <li>Brasão como símbolo do reino</li>
+              <li>Pergaminhos para cada aula</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aulas -->
+    <section class="band" id="aulas" aria-labelledby="auTitle">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="auTitle">Aulas</h2>
+          <p>Prepare-se para embarcar em uma jornada pelo mundo dos algoritmos em C, onde cada aula é uma nova missão e
+            cada conceito aprendido é uma habilidade desbloqueada! Aprenda lógica de programação, variáveis, condições e
+            loops enquanto explora masmorras, enfrenta desafios e evolui seu personagem. Desenvolva suas habilidades,
+            resolva enigmas e use sua criatividade para superar obstáculos através do código. Sua jornada para se tornar
+            um grande programador começa agora, aventureiro!</p>
+        </div>
+
+        <div class="dialog admin" id="admin" aria-label="Painel do mestre">
+          <h3>Painel do Mestre <small>Área protegida por senha.</small></h3>
+          <div class="row">
+            <label>Aula
+              <select id="adLocal"></select>
+            </label>
+            <label>Título da aula
+              <input id="adTitle" type="text" maxlength="90" placeholder="Ex.: Aula 1 - Introdução">
+            </label>
+            <label class="wide">Link do YouTube
+              <input id="adUrl" type="url" placeholder="https://www.youtube.com/watch?v=...">
+            </label>
+            <label class="wide">Descrição (opcional)
+              <input id="adDesc" type="text" maxlength="400" placeholder="Do que trata esta aula?">
+            </label>
+            <button class="btn" id="adAdd" type="button">Guardar aula</button>
+          </div>
+          <p class="msg" id="adMsg" role="status"></p>
+        </div>
+
+        <div class="map" id="modules"></div>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="band alt" id="sobre" aria-labelledby="soTitle">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="soTitle">Sobre</h2>
+          <p>Nossa trajetória até aqui.</p>
+        </div>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- Time -->
+    <section class="band" id="time" aria-labelledby="tiTitle">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="tiTitle">Nosso time</h2>
+          <p>Conheça os aventureiros que construíram este reino e acompanhe nosso trabalho no LinkedIn e no GitHub.</p>
+        </div>
+        <div class="team" id="team"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Projeto desenvolvido por quatro estudantes.</p>
+    <p>© 2026 C de Aventura · Que seus dados rolem sempre 20.</p>
+  </footer>
+
+  <!-- Janela da aula -->
+  <dialog class="modal" id="moduleModal" aria-labelledby="modalTitle">
+    <div class="modal-head">
+      <div>
+        <small id="modalMod"></small>
+        <h2 id="modalTitle"></h2>
+      </div>
+      <button class="btn small" id="modalClose" type="button">Fechar</button>
+    </div>
+    <div class="modal-body">
+      <div class="player">
+        <div class="screen" id="screen"></div>
+        <div class="now">
+          <a id="nowLink" href="#" target="_blank" rel="noopener noreferrer">Abrir no YouTube</a>
+        </div>
+      </div>
+      <p class="lesson-desc" id="lessonDesc" hidden></p>
+      <div class="lesson-actions">
+        <button class="btn danger small" id="lessonRemove" type="button" hidden>Remover aula</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
