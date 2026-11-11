@@ -10,6 +10,23 @@
 #define COLUNAS 7
 
 
+struct Personagem{
+    char nome[50];
+    int vida;
+    int forca;
+    int mana;
+    float multiplicadorDano;
+    int mochila[TAM_MOCHILA];
+};
+
+void mostrarFicha(struct Personagem p){
+    printf("\n--- Ficha do %s ---\n", p.nome);
+    printf("Vida: %d\n", p.vida);
+    printf("Forca: %d\n", p.forca);
+    printf("Mana: %d\n", p.mana);
+    printf("Multiplicador de dano critico: %.2f\n", p.multiplicadorDano);
+}
+
 void mostrarMochila(int mochila[]){
     printf("Itens na mochila:\n");
     for(int i = 0; i < TAM_MOCHILA; i++){
@@ -54,44 +71,38 @@ int atacar(char nomeAtacante[], int dano, int vidaAlvo){
 int main()
 {
 
-    /* ---------- MÓDULO 1 ---------- */
-
-    char nome[50];
-    int vida;
-    int forca;
-    int mana;
-
     const int VIDA_MAX = 70;
 
-    vida = VIDA_MAX;
+    /* ---------- MÓDULO 1 ---------- */
+
+    struct Personagem heroi = {"", VIDA_MAX, 0, 0, 1.5, {POCAO, CHAVE}};
+
 
     printf("Digite o nome do personagem:");
-    scanf("%49s", nome);
+    scanf("%49s", heroi.nome);
 
     printf("Digite a força do personagem:");
-    scanf("%d", &forca);
+    scanf("%d", &heroi.forca);
 
-    printf("Digite a mana do personagem");
-    scanf("%d", &mana);
+    printf("Digite a mana do personagem:");
+    scanf("%d", &heroi.mana);
 
     float multiplicadorDano = 1.5;
 
-    printf("\n--- Ficha do Heroi ---\n");
-    printf("Nome:  %s\n", nome);
-    printf("Vida:  %d\n", vida);
-    printf("Forca: %d\n", forca);
-    printf("Mana:  %d\n", mana);
-    printf("Multiplicador de dano critico: %.2f\n", multiplicadorDano);
+    mostrarFicha(heroi);
 
-    int poderTotal = forca + mana;
+    int poderTotal = heroi.forca + heroi.mana;
 
     /* ------------ MÓDULO 2 ------------ */
 
-    int forcaInimigo = 12;
-    int manaInimigo = 8;
-    int poderInimigo = forcaInimigo + manaInimigo;
+    struct Personagem inimigo = {"Goblin", 50, 12, 8, 1.0};
+
+    mostrarFicha(inimigo);
+
+    int poderInimigo = inimigo.forca + inimigo.mana;
 
     int diferencaPoder = poderTotal - poderInimigo;
+
     printf("Diferença de poder: %d\n", diferencaPoder);
 
     if (poderTotal > poderInimigo)
@@ -107,36 +118,6 @@ int main()
         printf("Poder Total entre ambos é o mesmo");
     }
 
-
-    /* ------------ MÓDULO 3 ------------ */
-    /*
-    int escolha;
-
-    printf("\n=== A BIFURCAÇÃO DA MASMORRA ===\n");
-    printf("Você chega a uma bifurcação. Escolha um caminho:\n");
-    printf("1 - Caminho da Esquerda (arriscado, tesouro maior)\n");
-    printf("2 - Caminho da Direita (seguro, tesouro menor)\n");
-    printf("Sua escolha: ");
-    scanf("%d", &escolha);
-
-    if (escolha == 1){
-        if (vida >= 80){
-            printf("Você sobrevive ao perigo e encontra um tesouro raro!\n");
-        } else{
-            printf("Você estava fraco demais e sofreu dano no caminho.\n");
-            vida = vida - 30;
-        }
-        
-    } else if(escolha == 2){
-        printf("Você segue em segurança e encontra um pequeno tesouro.\n");
-    } else {
-        printf("Caminho inválido! Você fica parado, hesitante");
-    }
-    
-    printf("\nVida atual do héroi: %d\n" ,vida);
-    */
-
-
     /* ------------ MÓDULO 4 ------------ */
 
     printf("Preparando para a batalha final\n");
@@ -145,28 +126,26 @@ int main()
         printf("Contagem regressiva: %d\n", contagem);
     }
 
-    int vidaInimigo = 50;
-
     int turno = 1;
 
     const int LIMITE_TURNOS = 10;
 
-    printf("Vida do herói: %d | Vida do inimigo: %d\n", vida, vidaInimigo);
+    printf("Vida do herói: %d | Vida do inimigo: %d\n", heroi.vida, inimigo.vida);
 
-    while(vida > 0 && vidaInimigo > 0 && turno <= LIMITE_TURNOS){
+    while(heroi.vida > 0 && inimigo.vida > 0 && turno <= LIMITE_TURNOS){
 
         int danoHeroi = calcularDano(poderTotal);
-        vidaInimigo = atacar(nome, danoHeroi, vidaInimigo);
+        inimigo.vida = atacar(heroi.nome, danoHeroi, inimigo.vida);
 
-        if(vidaInimigo <= 0){
+        if(inimigo.vida <= 0){
             printf("O inimigo foi derrotado!\n");
             break;
         }
 
         int danoInimigo = calcularDano(poderInimigo);
-        vida = atacar("Inimigo", danoInimigo, vida);
+        heroi.vida = atacar(inimigo.nome, danoInimigo, heroi.vida);
 
-        if(vida <= 0){
+        if(heroi.vida <= 0){
             printf("O herói foi derrotado!\n");
             break;
         }
@@ -176,11 +155,11 @@ int main()
     }
 
     printf("Total de turnos: %d\n", turno);
-    printf("Vida final do herói: %d | Vida final do inimigo: %d\n", vida, vidaInimigo);
+    printf("Vida final do herói: %d | Vida final do inimigo: %d\n", heroi.vida, inimigo.vida);
 
 
    int mochila[TAM_MOCHILA] = {POCAO, CHAVE};
-    mostrarMochila(mochila);
+    mostrarMochila(heroi.mochila);
 
     char mapa[LINHAS][COLUNAS] = {
         {'#','#','#','#','#','#','#'},
@@ -230,9 +209,11 @@ int main()
 
     desenharMapa(mapa, linhaHeroi, colunaHeroi);
     printf("\n Você encontrou o tesouro: uma espada curta!\n");
-    mochila[2] = ESPADA;
+    heroi.mochila[2] = ESPADA;
 
-    mostrarMochila(mochila);
+    printf("\n=== Ficha Final do Heroi ===\n");
+    mostrarFicha(heroi);
+    mostrarMochila(heroi.mochila);
 
     return 0;
 }
