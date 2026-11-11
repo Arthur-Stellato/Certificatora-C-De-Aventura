@@ -1,5 +1,46 @@
 #include <stdio.h>
 
+#define TAM_MOCHILA 5
+
+#define POCAO 1
+#define CHAVE 2
+#define ESPADA 3
+
+#define LINHAS 5
+#define COLUNAS 7
+
+
+void mostrarMochila(int mochila[]){
+    printf("Itens na mochila:\n");
+    for(int i = 0; i < TAM_MOCHILA; i++){
+        if(mochila[i] == POCAO){
+            printf("- Poção de Vida\n");
+        } else if(mochila[i] == CHAVE){
+            printf("- Chave do Cofre\n");
+        } else if(mochila[i] == ESPADA){
+            printf("- Espada Lendária\n");
+        } else {
+            printf("- Espaço vazio\n");
+        }
+    }
+}
+
+void desenharMapa(char mapa[LINHAS][COLUNAS], int linhaHeroi, int colunaHeroi){
+    printf("\nMapa do jogo:\n");
+    for(int i = 0; i < LINHAS; i++){
+        for(int j = 0; j < COLUNAS; j++){
+            if(i == linhaHeroi && j == colunaHeroi){
+                printf("@");
+            }
+            else{
+                printf("%c", mapa[i][j]);
+            }
+        }
+        printf("\n");
+    }
+}
+
+
 int calcularDano(int poder){
     return poder / 2;
 }
@@ -136,6 +177,62 @@ int main()
 
     printf("Total de turnos: %d\n", turno);
     printf("Vida final do herói: %d | Vida final do inimigo: %d\n", vida, vidaInimigo);
+
+
+   int mochila[TAM_MOCHILA] = {POCAO, CHAVE};
+    mostrarMochila(mochila);
+
+    char mapa[LINHAS][COLUNAS] = {
+        {'#','#','#','#','#','#','#'},
+        {'#','.','.','.','#','.','#'},
+        {'#','.','#','.','.','.','#'},
+        {'#','.','.','.','#','T','#'},
+        {'#','#','#','#','#','#','#'}
+    };
+
+    int linhaHeroi = 1;
+    int colunaHeroi = 1;
+
+    char comando;
+
+    printf("\n=== A MASMORRA ===\n");
+    printf("Use w/a/s/d para andar e ache o tesouro (T).\n");
+
+    while(mapa[linhaHeroi][colunaHeroi] != 'T'){
+
+        desenharMapa(mapa, linhaHeroi, colunaHeroi);
+
+        printf("Comando (w/a/s/d): ");
+        scanf(" %c", &comando); // o espaço antes do %c pula o Enter que sobrou
+
+
+        int novaLinha = linhaHeroi;
+        int novaColuna = colunaHeroi;
+
+        if(comando == 'w'){
+            novaLinha = novaLinha - 1;
+        } else if(comando == 's'){
+            novaLinha = novaLinha + 1;
+        } else if(comando == 'a'){
+            novaColuna = novaColuna - 1;
+        } else if(comando == 'd'){
+            novaColuna = novaColuna + 1;
+        } 
+
+        if(mapa[novaLinha][novaColuna] == '#'){
+            printf("Uma parede bloqueia seu caminho! Escolha outro movimento.\n");
+        } else {
+            linhaHeroi = novaLinha;
+            colunaHeroi = novaColuna;
+        }
+
+    }
+
+    desenharMapa(mapa, linhaHeroi, colunaHeroi);
+    printf("\n Você encontrou o tesouro: uma espada curta!\n");
+    mochila[2] = ESPADA;
+
+    mostrarMochila(mochila);
 
     return 0;
 }
