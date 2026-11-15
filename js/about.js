@@ -5,9 +5,9 @@ import { $, el } from './utils.js';
 
 // Último ponto, sempre igual: a história continua
 const FUTURO = {
-  marco: '…',
-  titulo: 'Tenho que terminar',
-  texto: '...'
+  marco: '2026...',
+  titulo: 'Um futuro em construção',
+  texto: 'Prontos para novos desafios no mercado de tecnologia e inovação.'
 };
 
 export function renderAbout() {
