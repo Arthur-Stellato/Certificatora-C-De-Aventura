@@ -6,8 +6,8 @@ export const PLACES = [
   { id: 'l3', name: 'Masmorra Esquecida', icon: 'masmorra' },
   { id: 'l4', name: 'A Primeira de Muitas', icon: 'castelo' },
   { id: 'l5', name: 'Torre do Mago', icon: 'torre' },
-  { id: 'l6', name: '', icon: 'porto' },
-  { id: 'l7', name: '', icon: 'covil' }
+  { id: 'l6', name: 'O Calabouço Profundo', icon: 'porto' },
+  { id: 'l7', name: 'A Volta dos que não Foram', icon: 'covil' }
 ];
 
 // Desenhos SVG de cada local (viewBox 0 0 48 48)
