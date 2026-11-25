@@ -3,7 +3,7 @@
   --bg:#e9dcc0; --bg2:#dccba5; --panel:#f4e9cf; --panel2:#ead9b4;
   --ink:#2a1d12; --ink-soft:#5b4630; --gold:#9a6a12; --gold-hi:#c58f1e;
   --blood:#8a2a22; --wood:#3a2616; --wood-ink:#f1dfb5; --line:#5b3d1e;
-  --glow:rgba(197,143,30,.35);
+  --glow:rgba(197,143,30,.35); --night:0;
   --display:'MedievalSharp','Palatino Linotype',Georgia,serif;
   --body:'Crimson Text','Palatino Linotype',Georgia,serif;
 }
@@ -12,14 +12,14 @@
     --bg:#15110d; --bg2:#1d1712; --panel:#241b13; --panel2:#2d2218;
     --ink:#ecdcb6; --ink-soft:#b9a37a; --gold:#d6a43a; --gold-hi:#f0c262;
     --blood:#c0473c; --wood:#0e0a07; --wood-ink:#ecdcb6; --line:#7a5526;
-    --glow:rgba(240,194,98,.3);
+    --glow:rgba(240,194,98,.3); --night:1;
   }
 }
 :root[data-theme="dark"]{
   --bg:#15110d; --bg2:#1d1712; --panel:#241b13; --panel2:#2d2218;
   --ink:#ecdcb6; --ink-soft:#b9a37a; --gold:#d6a43a; --gold-hi:#f0c262;
   --blood:#c0473c; --wood:#0e0a07; --wood-ink:#ecdcb6; --line:#7a5526;
-  --glow:rgba(240,194,98,.3);
+  --glow:rgba(240,194,98,.3); --night:1;
 }
 
 /* Base */
@@ -90,6 +90,16 @@ button{font:inherit;color:inherit;cursor:pointer}
     radial-gradient(2px 2px at 76% 16%,#fff,transparent),radial-gradient(1.5px 1.5px at 88% 38%,#fff,transparent),
     radial-gradient(1.5px 1.5px at 6% 50%,#fff,transparent),radial-gradient(1.5px 1.5px at 52% 52%,#fff,transparent);
 }
+/* Dia/noite: --night vale 0 (claro) ou 1 (escuro). O sol sobe e a lua desce (e vice-versa) */
+.hero::before{opacity:calc(.8*var(--night));transition:opacity .9s ease-in-out}
+.sky-day{
+  position:absolute;inset:0;opacity:calc(1 - var(--night));transition:opacity .9s ease-in-out;
+  background:linear-gradient(180deg,#2f5f8f 0%,#6fa0c8 55%,#f0c080 100%);
+}
+.sun,.moon{transition:transform .9s ease-in-out}
+.sun{transform:translateY(calc(var(--night)*240px))}
+.moon{transform:translateY(calc((1 - var(--night))*240px))}
+@media (prefers-reduced-motion:reduce){.hero::before,.sky-day,.sun,.moon{transition:none}}
 .hero-text{position:relative;z-index:1;max-width:760px}
 .eyebrow{font-family:var(--display);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-hi);margin:0 0 6px}
 .hero h1{font-size:clamp(2.7rem,9vw,5.6rem);color:var(--gold-hi);text-shadow:0 4px 0 #000,0 0 36px rgba(240,194,98,.35)}
