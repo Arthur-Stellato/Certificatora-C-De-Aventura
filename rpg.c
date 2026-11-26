@@ -118,6 +118,30 @@ int main()
         printf("Poder Total entre ambos é o mesmo");
     }
 
+        /* ------------ MÓDULO 3 ------------ */
+    int escolha = 0;
+
+    printf("\n=== A BIFURCAÇÃO DA MASMORRA ===\n");
+    printf("1 - Caminho da Esquerda (arriscado, tesouro maior)\n");
+    printf("2 - Caminho da Direita (seguro, tesouro menor)\n");
+    printf("Sua escolha: ");
+    scanf("%d", &escolha);
+
+    if (escolha == 1){
+        if (heroi.vida >= 80){
+            printf("Você sobrevive ao perigo e encontra um tesouro raro!\n");
+        } else {
+            printf("Você estava fraco demais e sofreu dano no caminho.\n");
+            heroi.vida = heroi.vida - 30;
+        }
+    } else if (escolha == 2){
+        printf("Você segue em segurança e encontra um pequeno tesouro.\n");
+    } else {
+        printf("Caminho inválido! Você fica parado, hesitante.\n");
+    }
+
+    printf("\nVida atual do herói: %d\n", heroi.vida);
+
     /* ------------ MÓDULO 4 ------------ */
 
     printf("Preparando para a batalha final\n");
