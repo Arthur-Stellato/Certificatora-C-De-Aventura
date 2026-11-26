@@ -12,6 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/logo.jpg">
 </head>
 
 <body>
@@ -20,17 +21,14 @@
   <nav class="nav" aria-label="Navegação principal">
     <div class="wrap">
       <a class="brand" href="#inicio">
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <path d="M32 4 56 14v18c0 14-10 24-24 28C18 56 8 46 8 32V14z" fill="#8a2a22" stroke="#c58f1e"
-            stroke-width="3" />
-          <path d="M32 14v34M20 26h24" stroke="#f1dfb5" stroke-width="4" stroke-linecap="round" />
-        </svg>
+        <img src="img/logo.jpg" alt="" width="40" height="40">
         C de Aventura
       </a>
       <div class="menu">
         <a href="#objetivos">Objetivos</a>
         <a href="#identidade">Identidade</a>
         <a href="#aulas">Aulas</a>
+        <a href="#teoria">Teoria</a>
         <a href="#sobre">Sobre</a>
         <a href="#time">Time</a>
       </div>
@@ -159,7 +157,7 @@
             <ul class="goals">
               <li>Caixas de diálogo com cantos em losango</li>
               <li>Mapa com ícones desenhados em traço</li>
-              <li>Brasão como símbolo do reino</li>
+              <li>Mapa do tesouro como símbolo do reino</li>
               <li>Pergaminhos para cada aula</li>
             </ul>
           </article>
@@ -203,8 +201,129 @@
       </div>
     </section>
 
+    <!-- Teoria -->
+    <section class="band alt" id="teoria" aria-labelledby="teTitle">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="teTitle">Teoria</h2>
+          <p>Leia antes de assistir. Clique em uma aula para abrir o texto.</p>
+        </div>
+        <details class="dialog lesson-text">
+          <summary>Aula 1 · Criação do Personagem <small>Variáveis, constantes, tipos, entrada, saída e expressões</small></summary>
+          <p><b>Pré-requisitos:</b> Nenhum. É o começo da jornada.</p>
+          <p>Uma variável é um espaço na memória com nome e tipo. <code>int</code> guarda inteiros, <code>float</code> guarda decimais, <code>char</code> guarda um caractere, e um vetor de <code>char</code> guarda texto. Uma constante, marcada com <code>const</code>, não muda depois de criada.</p>
+          <p><code>printf</code> mostra informações na tela e <code>scanf</code> lê o que a pessoa digita. Com <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> e <code>%</code> fazemos contas. Entre dois inteiros, a divisão descarta a parte decimal.</p>
+          <p><b>No jogo:</b> O herói precisa de nome, vida, força e mana. O <code>%49s</code> limita o nome a 49 caracteres, sem espaços, para não ultrapassar a memória reservada.</p>
+          <pre tabindex="0"><code>const int VIDA_MAX = 70;
+char nome[50];
+int forca, mana;
+
+scanf("%49s", nome);
+scanf("%d", &amp;forca);
+scanf("%d", &amp;mana);
+
+int poderTotal = forca + mana;</code></pre>
+        </details>
+        <details class="dialog lesson-text">
+          <summary>Aula 2 · Teste de Sorte <small>Expressões relacionais e lógicas</small></summary>
+          <p><b>Pré-requisitos:</b> Módulo 1.</p>
+          <p>Uma expressão relacional compara dois valores e resulta em verdadeiro (1) ou falso (0). Os operadores são <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code> (igual) e <code>!=</code> (diferente). Atenção: <code>=</code> atribui um valor, <code>==</code> compara.</p>
+          <p>Os operadores lógicos juntam condições: <code>&amp;&amp;</code> (e), <code>||</code> (ou) e <code>!</code> (não).</p>
+          <p><b>No jogo:</b> Um Goblin aparece. Comparamos o poder do herói com o dele para saber quem é mais forte. O jogo não sorteia números: o resultado depende dos valores digitados.</p>
+          <pre tabindex="0"><code>if (poderTotal &gt; poderInimigo) {
+    printf("O herói é mais forte!\n");
+} else if (poderTotal &lt; poderInimigo) {
+    printf("O inimigo é mais forte!\n");
+} else {
+    printf("Os dois têm o mesmo poder.\n");
+}</code></pre>
+        </details>
+        <details class="dialog lesson-text">
+          <summary>Aula 3 · A Bifurcação da Masmorra <small>Estruturas de decisão simples, composta e aninhada</small></summary>
+          <p><b>Pré-requisitos:</b> Módulos 1 e 2.</p>
+          <p>O <code>if</code> executa um bloco só quando a condição é verdadeira (decisão simples). Com <code>else</code>, há um caminho para o caso falso (decisão composta). <code>else if</code> testa outras possibilidades em sequência.</p>
+          <p>Um <code>if</code> dentro de outro é uma decisão aninhada: a segunda pergunta só é feita se a primeira for verdadeira.</p>
+          <p><b>No jogo:</b> O jogador escolhe um caminho. No caminho 1, o resultado também depende da vida. Como o herói começa com 70 e a condição pede 80, no jogo atual ele sofre dano.</p>
+          <pre tabindex="0"><code>if (escolha == 1) {
+    if (heroi.vida &gt;= 80) {
+        printf("Você encontra um tesouro raro!\n");
+    } else {
+        heroi.vida = heroi.vida - 30;
+    }
+} else if (escolha == 2) {
+    printf("Você segue em segurança.\n");
+} else {
+    printf("Caminho inválido!\n");
+}</code></pre>
+        </details>
+        <details class="dialog lesson-text">
+          <summary>Aula 4 · Combate por Turnos <small>Estruturas de repetição</small></summary>
+          <p><b>Pré-requisitos:</b> Módulos 1 a 3.</p>
+          <p>Um laço repete um bloco de código. O <code>for</code> é indicado quando sabemos quantas vezes repetir, e reúne início, condição e passo. O <code>while</code> repete enquanto a condição for verdadeira.</p>
+          <p>Se a condição nunca ficar falsa, o laço não termina (laço infinito). O comando <code>break</code> encerra o laço na hora.</p>
+          <p><b>No jogo:</b> O <code>for</code> faz a contagem regressiva. O <code>while</code> mantém a batalha enquanto os dois têm vida, com um limite de turnos por segurança.</p>
+          <pre tabindex="0"><code>for (int contagem = 3; contagem &gt;= 1; contagem--) {
+    printf("%d\n", contagem);
+}
+
+while (heroi.vida &gt; 0 &amp;&amp; inimigo.vida &gt; 0 &amp;&amp; turno &lt;= LIMITE_TURNOS) {
+    /* ataques */
+    turno = turno + 1;
+}</code></pre>
+        </details>
+        <details class="dialog lesson-text">
+          <summary>Aula 5 · Grimório de Habilidades <small>Funções</small></summary>
+          <p><b>Pré-requisitos:</b> Módulos 1 a 4.</p>
+          <p>Uma função é um bloco de código com nome, que escrevemos uma vez e usamos várias. Ela pode receber parâmetros e devolver um valor com <code>return</code>. Quando não devolve nada, seu tipo é <code>void</code>.</p>
+          <p>Ao passar um número para uma função, ela recebe uma cópia. Para alterar o valor original, devolvemos o resultado e o guardamos.</p>
+          <p><b>No jogo:</b> Cálculo de dano e ataque se repetiam para herói e inimigo. Cada tarefa virou uma função.</p>
+          <pre tabindex="0"><code>int calcularDano(int poder) {
+    return poder / 2;
+}
+
+int atacar(char nomeAtacante[], int dano, int vidaAlvo) {
+    int novaVida = vidaAlvo - dano;
+    printf("%s ataca! Vida do alvo: %d\n", nomeAtacante, novaVida);
+    return novaVida;
+}</code></pre>
+        </details>
+        <details class="dialog lesson-text">
+          <summary>Aula 6 · Inventário e Mapa da Masmorra <small>Vetores e matrizes</small></summary>
+          <p><b>Pré-requisitos:</b> Módulos 1 a 5.</p>
+          <p>Um vetor guarda vários valores do mesmo tipo sob um nome. Cada posição tem um índice, que começa em 0: com 5 espaços, os índices vão de 0 a 4. O C não avisa se você passar do limite.</p>
+          <p>Uma matriz é uma grade com dois índices, linha e coluna. Para percorrê-la, usamos um <code>for</code> dentro de outro.</p>
+          <p><b>No jogo:</b> A mochila é um vetor de itens. O mapa é uma matriz de caracteres: <code>#</code> é parede, <code>.</code> é chão e <code>T</code> é o tesouro.</p>
+          <pre tabindex="0"><code>int mochila[TAM_MOCHILA] = {POCAO, CHAVE};
+
+for (int i = 0; i &lt; LINHAS; i++) {
+    for (int j = 0; j &lt; COLUNAS; j++) {
+        printf("%c", mapa[i][j]);
+    }
+    printf("\n");
+}</code></pre>
+        </details>
+        <details class="dialog lesson-text">
+          <summary>Aula 7 · Ficha Completa do Herói <small>Variáveis compostas heterogêneas (struct)</small></summary>
+          <p><b>Pré-requisitos:</b> Módulos 1 a 6.</p>
+          <p>Uma <code>struct</code> cria um tipo novo que reúne campos de tipos diferentes. A declaração é o molde; cada variável criada a partir dele é uma ficha. Acessamos um campo com ponto: <code>heroi.vida</code>.</p>
+          <p>Ao passar uma struct para uma função, ela recebe uma cópia.</p>
+          <p><b>No jogo:</b> Os dados soltos do herói e do inimigo viram uma ficha para cada personagem.</p>
+          <pre tabindex="0"><code>struct Personagem {
+    char nome[50];
+    int vida;
+    int forca;
+    int mana;
+    float multiplicadorDano;
+    int mochila[TAM_MOCHILA];
+};
+
+struct Personagem inimigo = {"Goblin", 50, 12, 8, 1.0};</code></pre>
+        </details>
+      </div>
+    </section>
+
     <!-- Sobre -->
-    <section class="band alt" id="sobre" aria-labelledby="soTitle">
+    <section class="band" id="sobre" aria-labelledby="soTitle">
       <div class="wrap">
         <div class="sec-head">
           <h2 id="soTitle">Sobre</h2>
@@ -215,7 +334,7 @@
     </section>
 
     <!-- Time -->
-    <section class="band" id="time" aria-labelledby="tiTitle">
+    <section class="band alt" id="time" aria-labelledby="tiTitle">
       <div class="wrap">
         <div class="sec-head">
           <h2 id="tiTitle">Nosso time</h2>
@@ -230,6 +349,8 @@
   <footer>
     <p>Projeto desenvolvido por quatro estudantes.</p>
     <p>© 2026 C de Aventura · Que seus dados rolem sempre 20.</p>
+    <p>Código sob licença MIT · Conteúdo sob
+      <a href="https://creativecommons.org/licenses/by/4.0/deed.pt-br" style="color:inherit">CC BY 4.0</a></p>
   </footer>
 
   <!-- Janela da aula -->
