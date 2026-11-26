@@ -1,132 +1,73 @@
-# C de Aventura
+<div align="center">
 
-### Aprendendo Lógica de Programação Construindo um RPG de Texto em C
+<img src="img/logo.jpg" alt="Logo do C de Aventura: mapa do tesouro" width="120">
 
-Projeto de Extensão — Disciplina Certificadora de Competência Comum
-Curso-base: **Introdução à Programação** (Bloco 1)
+# C de Aventura — Site
 
----
+Branch `pages`: código do site do projeto.
 
-## Equipe
+**[Acessar o site](https://arthur-stellato.github.io/Certificatora-C-De-Aventura/)** · **[Repositório principal](https://github.com/Arthur-Stellato/Certificatora-C-De-Aventura/tree/main)** · **[YouTube](https://www.youtube.com/channel/UCHi5oqUjh3_k1XFBpOWMyuA)**
 
-- Arthur Gabriel Teotonio Stellato
-- Conrado Henrique Lima Da Mata
-- João Felipe Aleixo de Melo
-- Reinan Cordeiro Morais
+</div>
 
 ---
 
-## Tecnologias Utilizadas
+## O que tem no site
 
-| Tecnologia | Finalidade |
-|---|---|
-| **C (GCC)** | Linguagem principal do projeto — todo o RPG é implementado em C, compilado com `gcc -Wall` |
-| **Git & GitHub** | Controle de versão e hospedagem do repositório aberto (código, histórico de commits) |
-| **Kanban Via GitHub** | https://github.com/users/Arthur-Stellato/projects/3 |
-| **GitHub Pages** | Hospedagem desta página e do texto teórico de cada módulo |
-| **Markdown** | Formatação do conteúdo textual do REA |
-| **Google Meet** | Gravação das videoaulas, aproveitando a legenda automática nativa para acessibilidade |
+- As 7 videoaulas em um mapa, cada uma em um local, com player embutido.
+- Textos teóricos dos 7 módulos.
+- Objetivos, identidade visual, trajetória e equipe.
+- Modo claro e escuro.
 
-O projeto é desenvolvido majoritariamente com a biblioteca padrão do C (`stdio.h`). Outras bibliotecas padrão (como `string.h` ou `stdlib.h`) poderão ser incorporadas conforme a necessidade de módulos específicos, sempre priorizando simplicidade e poucas dependências, para que qualquer pessoa com um compilador C consiga rodar o código sem complicações.
+Feito com HTML, CSS e JavaScript puros, sem dependências para instalar nem etapa de build.
 
----
+## Como rodar localmente
 
-## 1. Objetivo Geral
+O site usa módulos JavaScript, então abrir o `index.html` direto no navegador não funciona. Na pasta do projeto:
 
-Desenvolver um Recurso Educacional Aberto (REA) que ensine os fundamentos da programação em C para pessoas sem experiência prévia, usando como fio condutor a construção progressiva de **um RPG de texto rodando no terminal**. Cada conceito técnico da ementa vira, na prática, uma peça funcional do jogo — o aluno-espectador não apenas assiste, ele constrói o jogo junto, módulo a módulo.
+```bash
+python -m http.server 8000
+```
 
-Essa escolha atende diretamente à exigência de que o código seja o núcleo do ensino, e não um acessório: aqui, o próprio jogo sendo construído é o material didático.
+Depois acesse <http://localhost:8000>.
 
-## 2. Objetivos Específicos
-
-- Produzir 7 videoaulas curtas (5–7 min), uma por módulo, gravadas no Google Meet.
-- Publicar o texto teórico de cada módulo nesta página (GitHub Pages), narrando o conceito antes da prática.
-- Manter este repositório com o código do RPG evoluindo commit a commit.
-- Garantir acessibilidade em 100% do material (legendas, alt-text, navegação por teclado, labels).
-
----
-
-## 3. Mapeamento de Conteúdo → Mecânica do Jogo
-
-| # | Tópico da Ementa | Mecânica do RPG | Conceitos de C |
-|---|---|---|---|
-| 1 | Constantes, variáveis, tipos, E/S, expressões aritméticas | Criação do Personagem | `int`, `float`, `char`, `scanf`/`printf`, operadores aritméticos |
-| 2 | Expressões relacionais e lógicas | Teste de Sorte | `>`, `<`, `==` |
-| 3 | Estrutura de decisão simples e composta | A Bifurcação da Masmorra | `if`, `else if`, `else` |
-| 4 | Estruturas de repetição (contador e condicional) | Combate por Turnos | `for`, `while` |
-| 5 | Modularização: funções | Grimório de Habilidades | Funções com/sem retorno, parâmetros |
-| 6 | Vetores e matrizes | Inventário e Mapa da Masmorra | Arrays 1D e 2D |
-| 7 | Variáveis compostas heterogêneas | Ficha Completa do Herói | `struct Personagem` |
-
-Ao final do módulo 7, o REA entrega um jogo funcional — o código guia a teoria de forma coesa, do início ao fim.
-
----
-
-## 4. O Tripé do Projeto (Texto + Vídeo + Código)
-
-Cada módulo segue o mesmo padrão:
-
-- **Texto** (nesta página): explica o conceito, o problema que ele resolve no jogo e os pré-requisitos.
-- **Vídeo** (5–7 min): tela compartilhada, código escrito ao vivo, legenda revisada.
-- **Código**: commit correspondente no [repositório](.), com o trecho do RPG funcionando ao final do módulo.
-
----
-
-## 5. Acessibilidade
-
-Este projeto segue um checklist de acessibilidade em todos os módulos:
-
-- [x] Legendas revisadas manualmente em todos os vídeos
-- [x] Alt-text em todas as imagens e diagramas
-- [x] Navegação 100% via teclado nesta página
-- [x] Labels em todo campo, link e botão do site
-
----
-
-## 6. Equipe e Distribuição de Horas (120h por pessoa)
-
-**Atividades compartilhadas (77h para cada integrante):**
-Reuniões semanais, planejamento, estudo da ementa, codificação dos 7 módulos, revisão final.
-
-**Atividades individuais (43h cada):**
-
-| Responsável | Frente |
-|---|---|
-| Arthur | Gravação das 7 videoaulas, revisão e edição de legendas e testes de qualidade dos vídeos |
-| Conrado | Criação e estilização do site (GitHub Pages), testes de acessibilidade e ajustes de responsividade |
-| João | Estruturação e organização do repositório GitHub, documentação técnica e controle de versão |
-| Reinan | Design do RPG, redação do texto teórico dos 7 módulos e roteiro dos vídeos |
-
----
-
-## 7. Cronograma
-
-| Fase | Período | Entrega |
-|---|---|---|
-| Planejamento | até 06/09/2026 | Proposta e repositório |
-| Desenvolvimento | 07/09 a 22/11/2026 | Módulos 1 a 7 (código + vídeo + texto) |
-| Apresentação parcial | 16/10/2026 | Módulos 1 a 4 |
-| Entrega final | 30/11/2026 | Projeto completo |
-
----
-
-## Estrutura do Repositório
+## Estrutura
 
 ```
 /
-├── index.md          → esta página
-├── rpg.c             → código-fonte do RPG (evolui a cada módulo)
-├── modulos/          → texto teórico de cada um dos 7 módulos
-└── videos/           → links para as videoaulas
+├── index.html        → página, incluindo os textos teóricos
+├── css/style.css     → estilos e cores
+├── img/logo.jpg      → logo
+└── js/
+    ├── main.js       → ponto de entrada
+    ├── aulas.js      → links e descrições das videoaulas
+    ├── alunos.js     → equipe
+    ├── trajetoria.js → linha do tempo
+    ├── config.js     → locais e ícones do mapa
+    ├── ui.js         → cartões das aulas
+    ├── modal.js      → janela com o player
+    ├── theme.js      → modo claro e escuro
+    ├── about.js      → seção Sobre
+    ├── contact.js    → seção Time
+    ├── admin.js      → Painel do Mestre
+    ├── api.js        → comunicação com o servidor
+    ├── state.js      → estado compartilhado
+    └── utils.js      → funções auxiliares
 ```
 
-## Como Compilar e Rodar
+## Como atualizar o conteúdo
 
-```bash
-gcc -Wall -o rpg rpg.c
-./rpg
-```
+| O que mudar | Onde |
+|---|---|
+| Vídeo, título ou descrição de uma aula | `js/aulas.js` |
+| Texto teórico | `index.html`, seção `teoria` |
+| Integrantes e links | `js/alunos.js` |
+| Linha do tempo | `js/trajetoria.js` |
+| Cores | variáveis no início de `css/style.css` |
 
----
+> [!NOTE]
+> O Painel do Mestre precisa de um servidor com as rotas `api/`, que não faz parte desta branch. Sem ele, como no GitHub Pages, o painel fica escondido e o site usa as aulas de `js/aulas.js`.
 
-*Projeto de extensão vinculado ao tema "Ensino Lúdico de Lógica e Programação".*
+## Licença
+
+Código sob [MIT](https://github.com/Arthur-Stellato/Certificatora-C-De-Aventura/blob/main/LICENSE). Conteúdo sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.pt-br).
