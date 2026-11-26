@@ -158,6 +158,7 @@ Reuniões semanais, planejamento, estudo da ementa, codificação dos 7 módulos
 ```
 /
 ├── README.md         → este arquivo
+├── LICENSE           → licença do código (MIT)
 ├── docs/logo.jpg     → logo do projeto
 ├── rpg.c             → código-fonte do RPG (evolui a cada módulo)
 ├── modulos/          → roteiros dos 7 módulos
@@ -167,6 +168,15 @@ Reuniões semanais, planejamento, estudo da ementa, codificação dos 7 módulos
 O código do site fica na branch `pages`.
 
 </details>
+
+---
+
+## Licença
+
+- **Código** (`rpg.c`): [MIT](LICENSE).
+- **Textos, roteiros, videoaulas e logo:** [Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.pt-br).
+
+Pode usar, adaptar e compartilhar, desde que dê o crédito à equipe do C de Aventura.
 
 ---
 
