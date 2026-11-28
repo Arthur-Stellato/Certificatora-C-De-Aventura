@@ -15,13 +15,13 @@ import { $, ytId } from './utils.js';
 // Aula escrita direto em aulas.js (marcada como "fixed": o painel não mexe nela)
 function fixedLesson(placeId) {
   const aula = AULAS[placeId];
-  if (!aula || !aula.link) return null;
+  if (!aula  !aula.link) return null;
   const id = ytId(aula.link);
   if (!id) {
-    console.warn(`aulas.js: link inválido em ${placeId}:`, aula.link);
+    console.warn(aulas.js: link inválido em ${placeId}:, aula.link);
     return null;
   }
-  return { id, title: aula.titulo || 'Aula', desc: aula.descricao || '', fixed: true };
+  return { id, title: aula.titulo  'Aula', desc: aula.descricao || '', fixed: true };
 }
 
 // Cada aula tem no máximo 1 vídeo. O que está em aulas.js vale mais que o do painel.
@@ -48,6 +48,13 @@ setupModal();
 setupAdmin();
 renderAbout();
 renderTeam();
+// Teoria: Esc fecha o bloco aberto onde está o foco e volta pro botão dele
+$('teoria').addEventListener('keydown', (e) => {
+  const open = e.key === 'Escape' && e.target.closest('details[open]');
+  if (!open) return;
+  open.open = false;
+  open.querySelector('summary').focus();
+});
 applyContent();     // mostra as aulas fixas imediatamente
 renderModules();
 loadFromServer();
