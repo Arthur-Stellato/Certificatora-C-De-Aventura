@@ -21,9 +21,9 @@ export function openLesson(placeId) {
 
   const place = getPlace(placeId);
   const number = PLACES.findIndex((p) => p.id === placeId) + 1;
-  $('modalMod').textContent = Aula ${number} · ${place.name};
+  $('modalMod').textContent = `Aula ${number} · ${place.name}`;
   $('modalTitle').textContent = video.title;
-  $('nowLink').href = https://www.youtube.com/watch?v=${video.id};
+  $('nowLink').href = `https://www.youtube.com/watch?v=${video.id}`;
 
   const desc = $('lessonDesc');
   desc.textContent = video.desc || '';
@@ -34,7 +34,7 @@ export function openLesson(placeId) {
 
   // Coloca o vídeo do YouTube dentro da janela
   const iframe = document.createElement('iframe');
-  iframe.src = https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&rel=0&modestbranding=1;
+  iframe.src = `https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&rel=0&modestbranding=1`;
   iframe.title = video.title;
   iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
   iframe.referrerPolicy = 'strict-origin-when-cross-origin';

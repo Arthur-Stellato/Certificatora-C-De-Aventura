@@ -209,14 +209,20 @@
           <p>Leia antes de assistir. Clique em uma aula para abrir o texto e os exercícios.</p>
         </div>
         <details class="dialog lesson-text">
-          <summary>Aula 1 · Criação do Personagem <small>Variáveis, constantes, tipos, entrada, saída e expressões</small></summary>
+          <summary>Aula 1 · Criação do Personagem <small>Variáveis, constantes, tipos, entrada, saída e
+              expressões</small></summary>
           <details class="reveal">
             <summary class="btn">Teoria</summary>
-          <p><b>Pré-requisitos:</b> Nenhum. É o começo da jornada.</p>
-          <p>Uma variável é um espaço na memória com nome e tipo. <code>int</code> guarda inteiros, <code>float</code> guarda decimais, <code>char</code> guarda um caractere, e um vetor de <code>char</code> guarda texto. Uma constante, marcada com <code>const</code>, não muda depois de criada.</p>
-          <p><code>printf</code> mostra informações na tela e <code>scanf</code> lê o que a pessoa digita. Com <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> e <code>%</code> fazemos contas. Entre dois inteiros, a divisão descarta a parte decimal.</p>
-          <p><b>No jogo:</b> O herói precisa de nome, vida, força e mana. O <code>%49s</code> limita o nome a 49 caracteres, sem espaços, para não ultrapassar a memória reservada.</p>
-          <pre tabindex="0"><code>const int VIDA_MAX = 70;
+            <p><b>Pré-requisitos:</b> Nenhum. É o começo da jornada.</p>
+            <p>Uma variável é um espaço na memória com nome e tipo. <code>int</code> guarda inteiros, <code>float</code>
+              guarda decimais, <code>char</code> guarda um caractere, e um vetor de <code>char</code> guarda texto. Uma
+              constante, marcada com <code>const</code>, não muda depois de criada.</p>
+            <p><code>printf</code> mostra informações na tela e <code>scanf</code> lê o que a pessoa digita. Com
+              <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> e <code>%</code> fazemos contas. Entre dois
+              inteiros, a divisão descarta a parte decimal.</p>
+            <p><b>No jogo:</b> O herói precisa de nome, vida, força e mana. O <code>%49s</code> limita o nome a 49
+              caracteres, sem espaços, para não ultrapassar a memória reservada.</p>
+            <pre tabindex="0"><code>const int VIDA_MAX = 70;
 char nome[50];
 int forca, mana;
 
@@ -228,43 +234,50 @@ int poderTotal = forca + mana;</code></pre>
           </details>
           <details class="reveal exercises">
             <summary class="btn">Exercícios</summary>
-          <p>Faça no seu <code>rpg.c</code>, um de cada vez, e compile com <code>gcc -Wall</code>.</p>
-          <p><b>1.</b> Crie o atributo <code>agilidade</code>, leia o valor com <code>scanf</code> e some no poder total.</p>
-          <details class="reveal">
-            <summary class="btn small">Dica<span class="sr-only"> do exercício 1</span></summary>
-            <p>Declare um <code>int</code>, use <code>&amp;</code> no <code>scanf</code> e inclua a variável na soma.</p>
-          </details>
-          <details class="reveal">
-            <summary class="btn small">Solução<span class="sr-only"> do exercício 1</span></summary>
-            <p>Troque a linha do poderTotal por:</p>
-            <pre tabindex="0"><code>int agilidade;
+            <p>Faça no seu <code>rpg.c</code>, um de cada vez, e compile com <code>gcc -Wall</code>.</p>
+            <p><b>1.</b> Crie o atributo <code>agilidade</code>, leia o valor com <code>scanf</code> e some no poder
+              total.</p>
+            <details class="reveal">
+              <summary class="btn small">Dica<span class="sr-only"> do exercício 1</span></summary>
+              <p>Declare um <code>int</code>, use <code>&amp;</code> no <code>scanf</code> e inclua a variável na soma.
+              </p>
+            </details>
+            <details class="reveal">
+              <summary class="btn small">Solução<span class="sr-only"> do exercício 1</span></summary>
+              <p>Troque a linha do poderTotal por:</p>
+              <pre tabindex="0"><code>int agilidade;
 printf("Digite a agilidade do personagem:");
 scanf("%d", &amp;agilidade);
 
 int poderTotal = forca + mana + agilidade;</code></pre>
-          </details>
-          <p><b>2.</b> Mostre a média entre força e mana com duas casas decimais.</p>
-          <details class="reveal">
-            <summary class="btn small">Dica<span class="sr-only"> do exercício 2</span></summary>
-            <p>Entre dois inteiros a divisão descarta a parte decimal. Divida por <code>2.0</code> e imprima com <code>%.2f</code>.</p>
-          </details>
-          <details class="reveal">
-            <summary class="btn small">Solução<span class="sr-only"> do exercício 2</span></summary>
-            <p>Depois da linha do poderTotal:</p>
-            <pre tabindex="0"><code>float media = (forca + mana) / 2.0;
+            </details>
+            <p><b>2.</b> Mostre a média entre força e mana com duas casas decimais.</p>
+            <details class="reveal">
+              <summary class="btn small">Dica<span class="sr-only"> do exercício 2</span></summary>
+              <p>Entre dois inteiros a divisão descarta a parte decimal. Divida por <code>2.0</code> e imprima com
+                <code>%.2f</code>.</p>
+            </details>
+            <details class="reveal">
+              <summary class="btn small">Solução<span class="sr-only"> do exercício 2</span></summary>
+              <p>Depois da linha do poderTotal:</p>
+              <pre tabindex="0"><code>float media = (forca + mana) / 2.0;
 printf("Média: %.2f\n", media);</code></pre>
-          </details>
+            </details>
           </details>
         </details>
         <details class="dialog lesson-text">
           <summary>Aula 2 · Teste de Sorte <small>Expressões relacionais e lógicas</small></summary>
           <details class="reveal">
             <summary class="btn">Teoria</summary>
-          <p><b>Pré-requisitos:</b> Módulo 1.</p>
-          <p>Uma expressão relacional compara dois valores e resulta em verdadeiro (1) ou falso (0). Os operadores são <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code> (igual) e <code>!=</code> (diferente). Atenção: <code>=</code> atribui um valor, <code>==</code> compara.</p>
-          <p>Os operadores lógicos juntam condições: <code>&amp;&amp;</code> (e), <code>||</code> (ou) e <code>!</code> (não).</p>
-          <p><b>No jogo:</b> Um Goblin aparece. Comparamos o poder do herói com o dele para saber quem é mais forte. O jogo não sorteia números: o resultado depende dos valores digitados.</p>
-          <pre tabindex="0"><code>if (poderTotal &gt; poderInimigo) {
+            <p><b>Pré-requisitos:</b> Módulo 1.</p>
+            <p>Uma expressão relacional compara dois valores e resulta em verdadeiro (1) ou falso (0). Os operadores são
+              <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code> (igual) e
+              <code>!=</code> (diferente). Atenção: <code>=</code> atribui um valor, <code>==</code> compara.</p>
+            <p>Os operadores lógicos juntam condições: <code>&amp;&amp;</code> (e), <code>||</code> (ou) e
+              <code>!</code> (não).</p>
+            <p><b>No jogo:</b> Um Goblin aparece. Comparamos o poder do herói com o dele para saber quem é mais forte. O
+              jogo não sorteia números: o resultado depende dos valores digitados.</p>
+            <pre tabindex="0"><code>if (poderTotal &gt; poderInimigo) {
     printf("O herói é mais forte!\n");
 } else if (poderTotal &lt; poderInimigo) {
     printf("O inimigo é mais forte!\n");
@@ -274,42 +287,48 @@ printf("Média: %.2f\n", media);</code></pre>
           </details>
           <details class="reveal exercises">
             <summary class="btn">Exercícios</summary>
-          <p>Faça no seu <code>rpg.c</code>, um de cada vez, e compile com <code>gcc -Wall</code>.</p>
-          <p><b>1.</b> Mostre “O herói domina a batalha!” se o poder dele for pelo menos o dobro do poder do inimigo.</p>
-          <details class="reveal">
-            <summary class="btn small">Dica<span class="sr-only"> do exercício 1</span></summary>
-            <p>“Pelo menos” é <code>&gt;=</code>. O dobro é <code>poderInimigo * 2</code>.</p>
-          </details>
-          <details class="reveal">
-            <summary class="btn small">Solução<span class="sr-only"> do exercício 1</span></summary>
-            <p>Depois do printf da diferença de poder:</p>
-            <pre tabindex="0"><code>if (poderTotal &gt;= poderInimigo * 2) {
+            <p>Faça no seu <code>rpg.c</code>, um de cada vez, e compile com <code>gcc -Wall</code>.</p>
+            <p><b>1.</b> Mostre “O herói domina a batalha!” se o poder dele for pelo menos o dobro do poder do inimigo.
+            </p>
+            <details class="reveal">
+              <summary class="btn small">Dica<span class="sr-only"> do exercício 1</span></summary>
+              <p>“Pelo menos” é <code>&gt;=</code>. O dobro é <code>poderInimigo * 2</code>.</p>
+            </details>
+            <details class="reveal">
+              <summary class="btn small">Solução<span class="sr-only"> do exercício 1</span></summary>
+              <p>Depois do printf da diferença de poder:</p>
+              <pre tabindex="0"><code>if (poderTotal &gt;= poderInimigo * 2) {
     printf("O herói domina a batalha!\n");
 }</code></pre>
-          </details>
-          <p><b>2.</b> Mostre “Herói equilibrado!” somente se força e mana forem maiores que 10.</p>
-          <details class="reveal">
-            <summary class="btn small">Dica<span class="sr-only"> do exercício 2</span></summary>
-            <p>As duas condições precisam ser verdadeiras ao mesmo tempo: use <code>&amp;&amp;</code>.</p>
-          </details>
-          <details class="reveal">
-            <summary class="btn small">Solução<span class="sr-only"> do exercício 2</span></summary>
-            <p>Depois do printf da diferença de poder:</p>
-            <pre tabindex="0"><code>if (forca &gt; 10 &amp;&amp; mana &gt; 10) {
+            </details>
+            <p><b>2.</b> Mostre “Herói equilibrado!” somente se força e mana forem maiores que 10.</p>
+            <details class="reveal">
+              <summary class="btn small">Dica<span class="sr-only"> do exercício 2</span></summary>
+              <p>As duas condições precisam ser verdadeiras ao mesmo tempo: use <code>&amp;&amp;</code>.</p>
+            </details>
+            <details class="reveal">
+              <summary class="btn small">Solução<span class="sr-only"> do exercício 2</span></summary>
+              <p>Depois do printf da diferença de poder:</p>
+              <pre tabindex="0"><code>if (forca &gt; 10 &amp;&amp; mana &gt; 10) {
     printf("Herói equilibrado!\n");
 }</code></pre>
-          </details>
+            </details>
           </details>
         </details>
         <details class="dialog lesson-text">
-          <summary>Aula 3 · A Bifurcação da Masmorra <small>Estruturas de decisão simples, composta e aninhada</small></summary>
+          <summary>Aula 3 · A Bifurcação da Masmorra <small>Estruturas de decisão simples, composta e aninhada</small>
+          </summary>
           <details class="reveal">
             <summary class="btn">Teoria</summary>
-          <p><b>Pré-requisitos:</b> Módulos 1 e 2.</p>
-          <p>O <code>if</code> executa um bloco só quando a condição é verdadeira (decisão simples). Com <code>else</code>, há um caminho para o caso falso (decisão composta). <code>else if</code> testa outras possibilidades em sequência.</p>
-          <p>Um <code>if</code> dentro de outro é uma decisão aninhada: a segunda pergunta só é feita se a primeira for verdadeira.</p>
-          <p><b>No jogo:</b> O jogador escolhe um caminho. No caminho 1, o resultado também depende da vida. Como o herói começa com 70 e a condição pede 80, no jogo atual ele sofre dano.</p>
-          <pre tabindex="0"><code>if (escolha == 1) {
+            <p><b>Pré-requisitos:</b> Módulos 1 e 2.</p>
+            <p>O <code>if</code> executa um bloco só quando a condição é verdadeira (decisão simples). Com
+              <code>else</code>, há um caminho para o caso falso (decisão composta). <code>else if</code> testa outras
+              possibilidades em sequência.</p>
+            <p>Um <code>if</code> dentro de outro é uma decisão aninhada: a segunda pergunta só é feita se a primeira
+              for verdadeira.</p>
+            <p><b>No jogo:</b> O jogador escolhe um caminho. No caminho 1, o resultado também depende da vida. Como o
+              herói começa com 70 e a condição pede 80, no jogo atual ele sofre dano.</p>
+            <pre tabindex="0"><code>if (escolha == 1) {
     if (vida &gt;= 80) {
         printf("Você encontra um tesouro raro!\n");
     } else {
@@ -323,50 +342,56 @@ printf("Média: %.2f\n", media);</code></pre>
           </details>
           <details class="reveal exercises">
             <summary class="btn">Exercícios</summary>
-          <p>Faça no seu <code>rpg.c</code>, um de cada vez, e compile com <code>gcc -Wall</code>.</p>
-          <p><b>1.</b> Crie o caminho 3, com uma armadilha: com mana 15 ou mais o herói passa ileso; senão, perde 10 de vida.</p>
-          <details class="reveal">
-            <summary class="btn small">Dica<span class="sr-only"> do exercício 1</span></summary>
-            <p>Adicione um <code>else if</code> antes do último <code>else</code> e coloque outro <code>if</code> dentro dele. Não esqueça de mostrar a opção no menu.</p>
-          </details>
-          <details class="reveal">
-            <summary class="btn small">Solução<span class="sr-only"> do exercício 1</span></summary>
-            <p>No menu, antes de “Sua escolha”:</p>
-            <pre tabindex="0"><code>printf("3 - Caminho do Meio (armadilha mágica)\n");</code></pre>
-            <p>Antes do último else da escolha:</p>
-            <pre tabindex="0"><code>} else if (escolha == 3) {
+            <p>Faça no seu <code>rpg.c</code>, um de cada vez, e compile com <code>gcc -Wall</code>.</p>
+            <p><b>1.</b> Crie o caminho 3, com uma armadilha: com mana 15 ou mais o herói passa ileso; senão, perde 10
+              de vida.</p>
+            <details class="reveal">
+              <summary class="btn small">Dica<span class="sr-only"> do exercício 1</span></summary>
+              <p>Adicione um <code>else if</code> antes do último <code>else</code> e coloque outro <code>if</code>
+                dentro dele. Não esqueça de mostrar a opção no menu.</p>
+            </details>
+            <details class="reveal">
+              <summary class="btn small">Solução<span class="sr-only"> do exercício 1</span></summary>
+              <p>No menu, antes de “Sua escolha”:</p>
+              <pre tabindex="0"><code>printf("3 - Caminho do Meio (armadilha mágica)\n");</code></pre>
+              <p>Antes do último else da escolha:</p>
+              <pre tabindex="0"><code>} else if (escolha == 3) {
     if (mana &gt;= 15) {
         printf("Sua magia revela a armadilha!\n");
     } else {
         printf("A armadilha acerta você!\n");
         vida = vida - 10;
     }</code></pre>
-          </details>
-          <p><b>2.</b> Depois da escolha, avise “Vida baixa!” se a vida for menor que 50. Senão, mostre “Pronto para a batalha!”.</p>
-          <details class="reveal">
-            <summary class="btn small">Dica<span class="sr-only"> do exercício 2</span></summary>
-            <p>É uma decisão composta: um <code>if</code> com <code>else</code>.</p>
-          </details>
-          <details class="reveal">
-            <summary class="btn small">Solução<span class="sr-only"> do exercício 2</span></summary>
-            <p>Depois do printf da vida atual:</p>
-            <pre tabindex="0"><code>if (vida &lt; 50) {
+            </details>
+            <p><b>2.</b> Depois da escolha, avise “Vida baixa!” se a vida for menor que 50. Senão, mostre “Pronto para a
+              batalha!”.</p>
+            <details class="reveal">
+              <summary class="btn small">Dica<span class="sr-only"> do exercício 2</span></summary>
+              <p>É uma decisão composta: um <code>if</code> com <code>else</code>.</p>
+            </details>
+            <details class="reveal">
+              <summary class="btn small">Solução<span class="sr-only"> do exercício 2</span></summary>
+              <p>Depois do printf da vida atual:</p>
+              <pre tabindex="0"><code>if (vida &lt; 50) {
     printf("Vida baixa!\n");
 } else {
     printf("Pronto para a batalha!\n");
 }</code></pre>
-          </details>
+            </details>
           </details>
         </details>
         <details class="dialog lesson-text">
           <summary>Aula 4 · Combate por Turnos <small>Estruturas de repetição</small></summary>
           <details class="reveal">
             <summary class="btn">Teoria</summary>
-          <p><b>Pré-requisitos:</b> Módulos 1 a 3.</p>
-          <p>Um laço repete um bloco de código. O <code>for</code> é indicado quando sabemos quantas vezes repetir, e reúne início, condição e passo. O <code>while</code> repete enquanto a condição for verdadeira.</p>
-          <p>Se a condição nunca ficar falsa, o laço não termina (laço infinito). O comando <code>break</code> encerra o laço na hora.</p>
-          <p><b>No jogo:</b> O <code>for</code> faz a contagem regressiva. O <code>while</code> mantém a batalha enquanto os dois têm vida, com um limite de turnos por segurança.</p>
-          <pre tabindex="0"><code>for (int contagem = 3; contagem &gt;= 1; contagem--) {
+            <p><b>Pré-requisitos:</b> Módulos 1 a 3.</p>
+            <p>Um laço repete um bloco de código. O <code>for</code> é indicado quando sabemos quantas vezes repetir, e
+              reúne início, condição e passo. O <code>while</code> repete enquanto a condição for verdadeira.</p>
+            <p>Se a condição nunca ficar falsa, o laço não termina (laço infinito). O comando <code>break</code> encerra
+              o laço na hora.</p>
+            <p><b>No jogo:</b> O <code>for</code> faz a contagem regressiva. O <code>while</code> mantém a batalha
+              enquanto os dois têm vida, com um limite de turnos por segurança.</p>
+            <pre tabindex="0"><code>for (int contagem = 3; contagem &gt;= 1; contagem--) {
     printf("%d\n", contagem);
 }
 
@@ -377,42 +402,47 @@ while (vida &gt; 0 &amp;&amp; vidaInimigo &gt; 0 &amp;&amp; turno &lt;= LIMITE_T
           </details>
           <details class="reveal exercises">
             <summary class="btn">Exercícios</summary>
-          <p>Faça no seu <code>rpg.c</code>, um de cada vez, e compile com <code>gcc -Wall</code>.</p>
-          <p><b>1.</b> Faça a contagem regressiva começar em 5.</p>
-          <details class="reveal">
-            <summary class="btn small">Dica<span class="sr-only"> do exercício 1</span></summary>
-            <p>Só o valor inicial do <code>for</code> muda.</p>
-          </details>
-          <details class="reveal">
-            <summary class="btn small">Solução<span class="sr-only"> do exercício 1</span></summary>
-            <p>Troque o início do for:</p>
-            <pre tabindex="0"><code>for(int contagem = 5; contagem &gt;= 1; contagem--){</code></pre>
-          </details>
-          <p><b>2.</b> Mostre, no fim do combate, o dano total causado pelo herói.</p>
-          <details class="reveal">
-            <summary class="btn small">Dica<span class="sr-only"> do exercício 2</span></summary>
-            <p>Crie uma variável com 0 antes do <code>while</code> e some o dano a cada turno. Se declarar dentro do laço, ela é recriada toda vez.</p>
-          </details>
-          <details class="reveal">
-            <summary class="btn small">Solução<span class="sr-only"> do exercício 2</span></summary>
-            <p>Antes do while:</p>
-            <pre tabindex="0"><code>int danoTotal = 0;</code></pre>
-            <p>Dentro do while, depois de calcular o danoHeroi:</p>
-            <pre tabindex="0"><code>danoTotal = danoTotal + danoHeroi;</code></pre>
-            <p>Depois do while:</p>
-            <pre tabindex="0"><code>printf("Dano total do herói: %d\n", danoTotal);</code></pre>
-          </details>
+            <p>Faça no seu <code>rpg.c</code>, um de cada vez, e compile com <code>gcc -Wall</code>.</p>
+            <p><b>1.</b> Faça a contagem regressiva começar em 5.</p>
+            <details class="reveal">
+              <summary class="btn small">Dica<span class="sr-only"> do exercício 1</span></summary>
+              <p>Só o valor inicial do <code>for</code> muda.</p>
+            </details>
+            <details class="reveal">
+              <summary class="btn small">Solução<span class="sr-only"> do exercício 1</span></summary>
+              <p>Troque o início do for:</p>
+              <pre tabindex="0"><code>for(int contagem = 5; contagem &gt;= 1; contagem--){</code></pre>
+            </details>
+            <p><b>2.</b> Mostre, no fim do combate, o dano total causado pelo herói.</p>
+            <details class="reveal">
+              <summary class="btn small">Dica<span class="sr-only"> do exercício 2</span></summary>
+              <p>Crie uma variável com 0 antes do <code>while</code> e some o dano a cada turno. Se declarar dentro do
+                laço, ela é recriada toda vez.</p>
+            </details>
+            <details class="reveal">
+              <summary class="btn small">Solução<span class="sr-only"> do exercício 2</span></summary>
+              <p>Antes do while:</p>
+              <pre tabindex="0"><code>int danoTotal = 0;</code></pre>
+              <p>Dentro do while, depois de calcular o danoHeroi:</p>
+              <pre tabindex="0"><code>danoTotal = danoTotal + danoHeroi;</code></pre>
+              <p>Depois do while:</p>
+              <pre tabindex="0"><code>printf("Dano total do herói: %d\n", danoTotal);</code></pre>
+            </details>
           </details>
         </details>
         <details class="dialog lesson-text">
           <summary>Aula 5 · Grimório de Habilidades <small>Funções</small></summary>
           <details class="reveal">
             <summary class="btn">Teoria</summary>
-          <p><b>Pré-requisitos:</b> Módulos 1 a 4.</p>
-          <p>Uma função é um bloco de código com nome, que escrevemos uma vez e usamos várias. Ela pode receber parâmetros e devolver um valor com <code>return</code>. Quando não devolve nada, seu tipo é <code>void</code>.</p>
-          <p>Ao passar um número para uma função, ela recebe uma cópia. Para alterar o valor original, devolvemos o resultado e o guardamos.</p>
-          <p><b>No jogo:</b> Cálculo de dano e ataque se repetiam para herói e inimigo. Cada tarefa virou uma função.</p>
-          <pre tabindex="0"><code>int calcularDano(int poder) {
+            <p><b>Pré-requisitos:</b> Módulos 1 a 4.</p>
+            <p>Uma função é um bloco de código com nome, que escrevemos uma vez e usamos várias. Ela pode receber
+              parâmetros e devolver um valor com <code>return</code>. Quando não devolve nada, seu tipo é
+              <code>void</code>.</p>
+            <p>Ao passar um número para uma função, ela recebe uma cópia. Para alterar o valor original, devolvemos o
+              resultado e o guardamos.</p>
+            <p><b>No jogo:</b> Cálculo de dano e ataque se repetiam para herói e inimigo. Cada tarefa virou uma função.
+            </p>
+            <pre tabindex="0"><code>int calcularDano(int poder) {
     return poder / 2;
 }
 
@@ -424,52 +454,57 @@ int atacar(char nomeAtacante[], int dano, int vidaAlvo) {
           </details>
           <details class="reveal exercises">
             <summary class="btn">Exercícios</summary>
-          <p>Faça no seu <code>rpg.c</code>, um de cada vez, e compile com <code>gcc -Wall</code>.</p>
-          <p><b>1.</b> Crie a função <code>curar</code>, que soma uma cura à vida sem passar do máximo. Use-a depois do combate.</p>
-          <details class="reveal">
-            <summary class="btn small">Dica<span class="sr-only"> do exercício 1</span></summary>
-            <p>Ela recebe vida, cura e vida máxima, e devolve a nova vida com <code>return</code>. Guarde o retorno em <code>vida</code>.</p>
-          </details>
-          <details class="reveal">
-            <summary class="btn small">Solução<span class="sr-only"> do exercício 1</span></summary>
-            <p>Antes do main:</p>
-            <pre tabindex="0"><code>int curar(int vida, int cura, int vidaMax){
+            <p>Faça no seu <code>rpg.c</code>, um de cada vez, e compile com <code>gcc -Wall</code>.</p>
+            <p><b>1.</b> Crie a função <code>curar</code>, que soma uma cura à vida sem passar do máximo. Use-a depois
+              do combate.</p>
+            <details class="reveal">
+              <summary class="btn small">Dica<span class="sr-only"> do exercício 1</span></summary>
+              <p>Ela recebe vida, cura e vida máxima, e devolve a nova vida com <code>return</code>. Guarde o retorno em
+                <code>vida</code>.</p>
+            </details>
+            <details class="reveal">
+              <summary class="btn small">Solução<span class="sr-only"> do exercício 1</span></summary>
+              <p>Antes do main:</p>
+              <pre tabindex="0"><code>int curar(int vida, int cura, int vidaMax){
     int novaVida = vida + cura;
     if (novaVida &gt; vidaMax) {
         novaVida = vidaMax;
     }
     return novaVida;
 }</code></pre>
-            <p>No main, depois do combate:</p>
-            <pre tabindex="0"><code>vida = curar(vida, 20, VIDA_MAX);</code></pre>
-          </details>
-          <p><b>2.</b> Crie a função <code>calcularDanoCritico</code> e use-a no primeiro ataque do herói.</p>
-          <details class="reveal">
-            <summary class="btn small">Dica<span class="sr-only"> do exercício 2</span></summary>
-            <p>Receba o poder e o multiplicador. Dá para reaproveitar <code>calcularDano</code> dentro dela.</p>
-          </details>
-          <details class="reveal">
-            <summary class="btn small">Solução<span class="sr-only"> do exercício 2</span></summary>
-            <p>Antes do main (depois de calcularDano):</p>
-            <pre tabindex="0"><code>int calcularDanoCritico(int poder, float multiplicador){
+              <p>No main, depois do combate:</p>
+              <pre tabindex="0"><code>vida = curar(vida, 20, VIDA_MAX);</code></pre>
+            </details>
+            <p><b>2.</b> Crie a função <code>calcularDanoCritico</code> e use-a no primeiro ataque do herói.</p>
+            <details class="reveal">
+              <summary class="btn small">Dica<span class="sr-only"> do exercício 2</span></summary>
+              <p>Receba o poder e o multiplicador. Dá para reaproveitar <code>calcularDano</code> dentro dela.</p>
+            </details>
+            <details class="reveal">
+              <summary class="btn small">Solução<span class="sr-only"> do exercício 2</span></summary>
+              <p>Antes do main (depois de calcularDano):</p>
+              <pre tabindex="0"><code>int calcularDanoCritico(int poder, float multiplicador){
     return calcularDano(poder) * multiplicador;
 }</code></pre>
-            <p>Dentro do while, depois de calcular o danoHeroi:</p>
-            <pre tabindex="0"><code>if (turno == 1) {
+              <p>Dentro do while, depois de calcular o danoHeroi:</p>
+              <pre tabindex="0"><code>if (turno == 1) {
     danoHeroi = calcularDanoCritico(poderTotal, multiplicadorDano);
 }</code></pre>
-          </details>
+            </details>
           </details>
         </details>
         <details class="dialog lesson-text">
           <summary>Aula 6 · Inventário e Mapa da Masmorra <small>Vetores e matrizes</small></summary>
           <details class="reveal">
             <summary class="btn">Teoria</summary>
-          <p><b>Pré-requisitos:</b> Módulos 1 a 5.</p>
-          <p>Um vetor guarda vários valores do mesmo tipo sob um nome. Cada posição tem um índice, que começa em 0: com 5 espaços, os índices vão de 0 a 4. O C não avisa se você passar do limite.</p>
-          <p>Uma matriz é uma grade com dois índices, linha e coluna. Para percorrê-la, usamos um <code>for</code> dentro de outro.</p>
-          <p><b>No jogo:</b> A mochila é um vetor de itens. O mapa é uma matriz de caracteres: <code>#</code> é parede, <code>.</code> é chão e <code>T</code> é o tesouro.</p>
-          <pre tabindex="0"><code>int mochila[TAM_MOCHILA] = {POCAO, CHAVE};
+            <p><b>Pré-requisitos:</b> Módulos 1 a 5.</p>
+            <p>Um vetor guarda vários valores do mesmo tipo sob um nome. Cada posição tem um índice, que começa em 0:
+              com 5 espaços, os índices vão de 0 a 4. O C não avisa se você passar do limite.</p>
+            <p>Uma matriz é uma grade com dois índices, linha e coluna. Para percorrê-la, usamos um <code>for</code>
+              dentro de outro.</p>
+            <p><b>No jogo:</b> A mochila é um vetor de itens. O mapa é uma matriz de caracteres: <code>#</code> é
+              parede, <code>.</code> é chão e <code>T</code> é o tesouro.</p>
+            <pre tabindex="0"><code>int mochila[TAM_MOCHILA] = {POCAO, CHAVE};
 
 for (int i = 0; i &lt; LINHAS; i++) {
     for (int j = 0; j &lt; COLUNAS; j++) {
@@ -480,32 +515,32 @@ for (int i = 0; i &lt; LINHAS; i++) {
           </details>
           <details class="reveal exercises">
             <summary class="btn">Exercícios</summary>
-          <p>Faça no seu <code>rpg.c</code>, um de cada vez, e compile com <code>gcc -Wall</code>.</p>
-          <p><b>1.</b> Conte e mostre quantos espaços vazios há na mochila.</p>
-          <details class="reveal">
-            <summary class="btn small">Dica<span class="sr-only"> do exercício 1</span></summary>
-            <p>Percorra o vetor com um <code>for</code>. Espaço vazio vale <code>0</code>.</p>
-          </details>
-          <details class="reveal">
-            <summary class="btn small">Solução<span class="sr-only"> do exercício 1</span></summary>
-            <p>Depois de mostrar a mochila:</p>
-            <pre tabindex="0"><code>int vazios = 0;
+            <p>Faça no seu <code>rpg.c</code>, um de cada vez, e compile com <code>gcc -Wall</code>.</p>
+            <p><b>1.</b> Conte e mostre quantos espaços vazios há na mochila.</p>
+            <details class="reveal">
+              <summary class="btn small">Dica<span class="sr-only"> do exercício 1</span></summary>
+              <p>Percorra o vetor com um <code>for</code>. Espaço vazio vale <code>0</code>.</p>
+            </details>
+            <details class="reveal">
+              <summary class="btn small">Solução<span class="sr-only"> do exercício 1</span></summary>
+              <p>Depois de mostrar a mochila:</p>
+              <pre tabindex="0"><code>int vazios = 0;
 for (int i = 0; i &lt; TAM_MOCHILA; i++) {
     if (mochila[i] == 0) {
         vazios++;
     }
 }
 printf("Espaços vazios: %d\n", vazios);</code></pre>
-          </details>
-          <p><b>2.</b> Conte quantas paredes (<code>#</code>) o mapa tem.</p>
-          <details class="reveal">
-            <summary class="btn small">Dica<span class="sr-only"> do exercício 2</span></summary>
-            <p>Matriz pede dois <code>for</code>: um para as linhas e outro para as colunas.</p>
-          </details>
-          <details class="reveal">
-            <summary class="btn small">Solução<span class="sr-only"> do exercício 2</span></summary>
-            <p>Depois da declaração do mapa:</p>
-            <pre tabindex="0"><code>int paredes = 0;
+            </details>
+            <p><b>2.</b> Conte quantas paredes (<code>#</code>) o mapa tem.</p>
+            <details class="reveal">
+              <summary class="btn small">Dica<span class="sr-only"> do exercício 2</span></summary>
+              <p>Matriz pede dois <code>for</code>: um para as linhas e outro para as colunas.</p>
+            </details>
+            <details class="reveal">
+              <summary class="btn small">Solução<span class="sr-only"> do exercício 2</span></summary>
+              <p>Depois da declaração do mapa:</p>
+              <pre tabindex="0"><code>int paredes = 0;
 for (int i = 0; i &lt; LINHAS; i++) {
     for (int j = 0; j &lt; COLUNAS; j++) {
         if (mapa[i][j] == '#') {
@@ -514,18 +549,19 @@ for (int i = 0; i &lt; LINHAS; i++) {
     }
 }
 printf("Paredes: %d\n", paredes);</code></pre>
-          </details>
+            </details>
           </details>
         </details>
         <details class="dialog lesson-text">
           <summary>Aula 7 · Ficha Completa do Herói <small>Variáveis compostas heterogêneas (struct)</small></summary>
           <details class="reveal">
             <summary class="btn">Teoria</summary>
-          <p><b>Pré-requisitos:</b> Módulos 1 a 6.</p>
-          <p>Uma <code>struct</code> cria um tipo novo que reúne campos de tipos diferentes. A declaração é o molde; cada variável criada a partir dele é uma ficha. Acessamos um campo com ponto: <code>heroi.vida</code>.</p>
-          <p>Ao passar uma struct para uma função, ela recebe uma cópia.</p>
-          <p><b>No jogo:</b> Os dados soltos do herói e do inimigo viram uma ficha para cada personagem.</p>
-          <pre tabindex="0"><code>struct Personagem {
+            <p><b>Pré-requisitos:</b> Módulos 1 a 6.</p>
+            <p>Uma <code>struct</code> cria um tipo novo que reúne campos de tipos diferentes. A declaração é o molde;
+              cada variável criada a partir dele é uma ficha. Acessamos um campo com ponto: <code>heroi.vida</code>.</p>
+            <p>Ao passar uma struct para uma função, ela recebe uma cópia.</p>
+            <p><b>No jogo:</b> Os dados soltos do herói e do inimigo viram uma ficha para cada personagem.</p>
+            <pre tabindex="0"><code>struct Personagem {
     char nome[50];
     int vida;
     int forca;
@@ -538,32 +574,33 @@ struct Personagem inimigo = {"Goblin", 50, 12, 8, 1.0};</code></pre>
           </details>
           <details class="reveal exercises">
             <summary class="btn">Exercícios</summary>
-          <p>Faça no seu <code>rpg.c</code>, um de cada vez, e compile com <code>gcc -Wall</code>.</p>
-          <p><b>1.</b> Adicione o campo <code>ouro</code> à ficha. O herói ganha 50 ao achar o tesouro.</p>
-          <details class="reveal">
-            <summary class="btn small">Dica<span class="sr-only"> do exercício 1</span></summary>
-            <p>Coloque o campo no fim da <code>struct</code>, para não bagunçar a ordem dos valores iniciais. Acesse com <code>heroi.ouro</code>.</p>
-          </details>
-          <details class="reveal">
-            <summary class="btn small">Solução<span class="sr-only"> do exercício 1</span></summary>
-            <p>No fim da struct Personagem:</p>
-            <pre tabindex="0"><code>int ouro;</code></pre>
-            <p>Dentro de mostrarFicha:</p>
-            <pre tabindex="0"><code>printf("Ouro: %d\n", p.ouro);</code></pre>
-            <p>Depois de achar o tesouro:</p>
-            <pre tabindex="0"><code>heroi.ouro = 50;</code></pre>
-          </details>
-          <p><b>2.</b> Crie um segundo inimigo, um Orc, e mostre a ficha dele.</p>
-          <details class="reveal">
-            <summary class="btn small">Dica<span class="sr-only"> do exercício 2</span></summary>
-            <p>Use a mesma <code>struct</code>, na ordem: nome, vida, força, mana e multiplicador.</p>
-          </details>
-          <details class="reveal">
-            <summary class="btn small">Solução<span class="sr-only"> do exercício 2</span></summary>
-            <p>Depois de mostrar a ficha do Goblin:</p>
-            <pre tabindex="0"><code>struct Personagem orc = {"Orc", 80, 18, 2, 1.0};
+            <p>Faça no seu <code>rpg.c</code>, um de cada vez, e compile com <code>gcc -Wall</code>.</p>
+            <p><b>1.</b> Adicione o campo <code>ouro</code> à ficha. O herói ganha 50 ao achar o tesouro.</p>
+            <details class="reveal">
+              <summary class="btn small">Dica<span class="sr-only"> do exercício 1</span></summary>
+              <p>Coloque o campo no fim da <code>struct</code>, para não bagunçar a ordem dos valores iniciais. Acesse
+                com <code>heroi.ouro</code>.</p>
+            </details>
+            <details class="reveal">
+              <summary class="btn small">Solução<span class="sr-only"> do exercício 1</span></summary>
+              <p>No fim da struct Personagem:</p>
+              <pre tabindex="0"><code>int ouro;</code></pre>
+              <p>Dentro de mostrarFicha:</p>
+              <pre tabindex="0"><code>printf("Ouro: %d\n", p.ouro);</code></pre>
+              <p>Depois de achar o tesouro:</p>
+              <pre tabindex="0"><code>heroi.ouro = 50;</code></pre>
+            </details>
+            <p><b>2.</b> Crie um segundo inimigo, um Orc, e mostre a ficha dele.</p>
+            <details class="reveal">
+              <summary class="btn small">Dica<span class="sr-only"> do exercício 2</span></summary>
+              <p>Use a mesma <code>struct</code>, na ordem: nome, vida, força, mana e multiplicador.</p>
+            </details>
+            <details class="reveal">
+              <summary class="btn small">Solução<span class="sr-only"> do exercício 2</span></summary>
+              <p>Depois de mostrar a ficha do Goblin:</p>
+              <pre tabindex="0"><code>struct Personagem orc = {"Orc", 80, 18, 2, 1.0};
 mostrarFicha(orc);</code></pre>
-          </details>
+            </details>
           </details>
         </details>
       </div>
@@ -597,7 +634,8 @@ mostrarFicha(orc);</code></pre>
     <p>Projeto desenvolvido por quatro estudantes.</p>
     <p>© 2026 C de Aventura · Que seus dados rolem sempre 20.</p>
     <p>Código sob licença MIT · Conteúdo sob
-      <a href="https://creativecommons.org/licenses/by/4.0/deed.pt-br" style="color:inherit">CC BY 4.0</a></p>
+      <a href="https://creativecommons.org/licenses/by/4.0/deed.pt-br" style="color:inherit">CC BY 4.0</a>
+    </p>
   </footer>
 
   <!-- Janela da aula -->
